@@ -13,7 +13,7 @@ dependencies = [
     "jupyterlab>=4.0",
     "tiktoken>=0.5.1",
     "matplotlib>=3.7.1",
-    "tensorflow>=2.18.0",
+    # "tensorflow>=2.18.0",
     "tqdm>=4.66.1",
     "numpy>=1.26,<2.1",
     "pandas>=2.2.1",
@@ -25,11 +25,7 @@ dependencies = [
 llms-from-scratch = { workspace = true }
 
 [dependency-groups]
-dev = [
-    "build>=1.2.2.post1",
-    "llms-from-scratch",
-    "twine>=6.1.0",
-]
+dev = ["build>=1.2.2.post1", "llms-from-scratch", "twine>=6.1.0"]
 
 [tool.ruff]
 line-length = 140
@@ -37,16 +33,13 @@ line-length = 140
 [tool.ruff.lint]
 exclude = [".venv"]
 # Ignored rules (W504 removed)
-ignore = [
-    "C406", "E226", "E402", "E702", "E703",
-    "E722", "E731", "E741"
-]
+ignore = ["C406", "E226", "E402", "E702", "E703", "E722", "E731", "E741"]
 
 
 # `llms_from_scratch` PyPI package
 
 [tool.setuptools]
-package-dir = {"" = "pkg"}
+package-dir = { "" = "pkg" }
 
 [tool.setuptools.packages.find]
 where = ["pkg"]
